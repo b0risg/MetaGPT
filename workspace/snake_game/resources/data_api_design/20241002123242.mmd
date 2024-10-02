@@ -1,0 +1,19 @@
+
+classDiagram
+    class Game {
+        -int score
+        -int speed
+        -list snake
+        -tuple food
+        -bool game_over
+        +__init__()
+        +run()
+        +handle_events()
+        +update()
+        +draw(screen)
+        +reset()
+    }
+    class Main {
+        +main()
+    }
+    Main --> Game

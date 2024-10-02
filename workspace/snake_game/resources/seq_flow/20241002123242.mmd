@@ -1,0 +1,13 @@
+
+sequenceDiagram
+    participant M as Main
+    participant G as Game
+    M->>G: __init__()
+    M->>G: run()
+    loop Game Loop
+        G->>G: handle_events()
+        G->>G: update()
+        G->>G: draw(screen)
+    end
+    G->>M: game_over
+    M->>G: reset()

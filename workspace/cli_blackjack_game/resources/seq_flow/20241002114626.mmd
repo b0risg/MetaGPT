@@ -1,0 +1,22 @@
+
+sequenceDiagram
+    participant M as Main
+    participant G as Game
+    participant D as Deck
+    participant P as Player
+    participant DL as Dealer
+    participant C as Card
+    M->>G: start_game()
+    G->>D: shuffle()
+    G->>D: deal_card()
+    D-->>G: return Card
+    G->>P: add_card(Card)
+    G->>DL: add_card(Card)
+    M->>G: hit()
+    G->>D: deal_card()
+    D-->>G: return Card
+    G->>P: add_card(Card)
+    M->>G: stand()
+    G->>DL: add_card(Card)
+    G->>G: check_winner()
+    G-->>M: return result

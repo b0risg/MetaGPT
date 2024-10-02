@@ -1,0 +1,46 @@
+
+classDiagram
+    class Main {
+        +start_game() void
+        +show_help() void
+    }
+    class Game {
+        -Deck deck
+        -Player player
+        -Dealer dealer
+        +start() void
+        +hit() void
+        +stand() void
+        +get_player_hand() list
+        +get_dealer_hand() list
+        +get_player_score() int
+        +get_dealer_score() int
+        +check_winner() str
+    }
+    class Deck {
+        -cards list
+        +shuffle() void
+        +deal_card() Card
+    }
+    class Card {
+        -rank str
+        -suit str
+        +get_value() int
+    }
+    class Player {
+        -hand list
+        +add_card(card: Card) void
+        +get_hand() list
+        +get_score() int
+    }
+    class Dealer {
+        -hand list
+        +add_card(card: Card) void
+        +get_hand() list
+        +get_score() int
+    }
+    Main --> Game
+    Game --> Deck
+    Game --> Player
+    Game --> Dealer
+    Deck --> Card
